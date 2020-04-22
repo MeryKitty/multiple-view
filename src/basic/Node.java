@@ -22,11 +22,6 @@ public class Node {
 	private double sizeX;
 	private double sizeY;
 	
-	/**
-        * exposure of the node
-	* @author longsw
-        */
-        private double exposure ;
 	
 	/**
 	 * children is an array of 4 elements, each of which represent a sub-rectangle
@@ -220,28 +215,4 @@ public class Node {
 		return this.coverSensors;
 	}
 	
-	/**
-	 * adjust implementation
-	 * @longsw
-	 */
-	public double getExposure(){ return exposure ;}
-	public void setExp( double exposure){ this.exposure = exposure ;}
-
-	public boolean checkTop(int top){
-		return ((yCoor+sizeY-top)<1e-5) ;
-	}
-
-	public boolean checkBottom(int bottom){
-		return ((yCoor-sizeY-bottom)<1e-5);
-	}
-
-	public boolean isNeighbor(Node other){
-		int i ;
-		for (i=0; i<this.neighbor.size();++i){
-			if( (neighbor.get(i).value.getX()== other.getX()) && (neighbor.get(i).value.getY()== other.getY()) ){
-				return true;
-			}
-		}
-		return false ;
-	}
 }
